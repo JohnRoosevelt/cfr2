@@ -1,6 +1,6 @@
 import fs from 'fs';
 import bible from './static/bible/index.json' with { type: 'json' };
-import { uploadFile } from './upload.js';
+import { uploadFile } from './r2.js';
 
 async function fmtData() {
   for (let i = 0; i < bible.length; i++) {
