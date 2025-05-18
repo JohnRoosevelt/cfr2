@@ -65,13 +65,13 @@ async function parseDocx(filePath) {
       }
 
       if (chapterIndex !== -1) {
-        // console.log({ text, p: p.outerHTML });
-        rz[chapterIndex].ps.push({ c: text, o: p.outerHTML });
+        console.log({ text, p: p.outerHTML, inner: p.innerHTML });
+        rz[chapterIndex].ps.push({ o: p.innerHTML });
       }
     });
 
-    console.log(rz);
-    // fs.writeFile(`./static/book/zh/${1}.json`, JSON.stringify(rz));
+    // console.log(rz);
+    fs.writeFile(`./static/book/zh/${1}.json`, JSON.stringify(rz));
     uploadFile(`./static/book/zh/${1}.json`, "holy", `book/zh/${1}.json`);
   } catch (err) {
     console.error("解析 DOCX 失败:", err.message);
