@@ -31,6 +31,7 @@ async function parseDocx(filePath) {
       const td = t.querySelector("td");
       const n = td.querySelector("h1").textContent.trim();
       rz[i] = { n, ps: [] };
+      rz[i].ps.push({ o: `<strong>${n}</strong>` });
 
       const paragraphs = td.querySelectorAll("p");
       console.log(i, n, paragraphs.length);
